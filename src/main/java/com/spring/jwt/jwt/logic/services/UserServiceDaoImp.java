@@ -31,6 +31,7 @@ public class UserServiceDaoImp implements UserServiceDao{
         if(count > 0)
             throw new ETAuthException("Email already in use");
         Integer userId = userRepository.create(firstName, lastName, email, password);
+
         return userRepository.findById(userId);
     }
 }
